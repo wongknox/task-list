@@ -12,7 +12,7 @@ export async function createUser(username, password) {
     } = await db.query(sql, [username, password]);
     return user;
   } catch (error) {
-    console.error(error.message);
+    console.error(`Error creating user: ${error.message}`);
     throw error;
   }
 }
